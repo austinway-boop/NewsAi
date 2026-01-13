@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsAI - Discover</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">
+                    <i class="fas fa-compass"></i>
+                    <h1>Discover</h1>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="share-btn">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-category="top">Top</button>
+            <button class="nav-tab" data-category="tech">Tech & Science</button>
+            <button class="nav-tab" data-category="finance">Finance</button>
+            <button class="nav-tab" data-category="culture">Arts & Culture</button>
+            <button class="nav-tab" data-category="sports">Sports</button>
+            <button class="nav-tab" data-category="politics">Politics</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="news-grid" id="newsGrid">
+            <!-- News cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Article Modal -->
+    <div class="modal" id="articleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="article-section">
+                    <img class="article-image" id="modalImage" src="" alt="">
+                    <h1 class="article-title" id="modalTitle"></h1>
+                    <div class="article-meta" id="modalMeta"></div>
+                    <div class="article-content" id="modalContent"></div>
+                </div>
+                <div class="chat-section">
+                    <div class="chat-header">
+                        <h3>Ask AI about this article</h3>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="ai-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Hi! I'm here to help you understand this article better. What would you like to know?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question about this article...">
+                        <button class="send-btn" id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <button class="mobile-menu-close" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mobile-nav-tabs">
+                <button class="mobile-nav-tab active" data-category="top">Top</button>
+                <button class="mobile-nav-tab" data-category="tech">Tech & Science</button>
+                <button class="mobile-nav-tab" data-category="finance">Finance</button>
+                <button class="mobile-nav-tab" data-category="culture">Arts & Culture</button>
+                <button class="mobile-nav-tab" data-category="sports">Sports</button>
+                <button class="mobile-nav-tab" data-category="politics">Politics</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
