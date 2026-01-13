@@ -5,18 +5,6 @@
 }
 
 :root {
-    --primary-bg: #ffffff;
-    --secondary-bg: #f8f9fa;
-    --border-color: #e1e5e9;
-    --text-primary: #1a1a1a;
-    --text-secondary: #666666;
-    --accent-color: #2563eb;
-    --hover-color: #f3f4f6;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="dark"] {
     --primary-bg: #1a1a1a;
     --secondary-bg: #2d2d2d;
     --border-color: #404040;
@@ -48,7 +36,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 8px 16px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -77,33 +65,11 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-}
-
-.logo i {
-    font-size: 24px;
-    color: var(--accent-color);
 }
 
 .logo h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    color: var(--text-primary);
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-    margin-right: 8px;
-}
-
-.theme-toggle:hover {
-    background-color: var(--hover-color);
     color: var(--text-primary);
 }
 
@@ -127,13 +93,13 @@ body {
     background-color: var(--primary-bg);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
-    top: 65px;
+    top: 52px;
     z-index: 999;
 }
 
 .nav-tabs {
     display: flex;
-    padding: 0 20px;
+    padding: 0 16px;
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: auto;
@@ -148,7 +114,7 @@ body {
 .nav-tab {
     background: none;
     border: none;
-    padding: 16px 20px;
+    padding: 12px 16px;
     font-size: 15px;
     font-weight: 500;
     color: var(--text-secondary);
@@ -171,7 +137,7 @@ body {
 .main-content {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 24px 20px;
+    padding: 20px 16px;
 }
 
 .news-grid {

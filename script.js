@@ -391,7 +391,6 @@ const closeMobileMenu = document.getElementById('closeMobileMenu');
 const chatInput = document.getElementById('chatInput');
 const sendBtn = document.getElementById('sendBtn');
 const chatMessages = document.getElementById('chatMessages');
-const themeToggle = document.getElementById('themeToggle');
 
 // Current state
 let currentCategory = 'top';
@@ -399,35 +398,9 @@ let currentArticle = null;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
-    initializeTheme();
     renderNews(currentCategory);
     setupEventListeners();
 });
-
-// Theme management
-function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-}
-
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    
-    // Update theme toggle icon
-    const icon = themeToggle.querySelector('i');
-    if (theme === 'dark') {
-        icon.className = 'fas fa-sun';
-    } else {
-        icon.className = 'fas fa-moon';
-    }
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-}
 
 // Setup event listeners
 function setupEventListeners() {
@@ -486,9 +459,6 @@ function setupEventListeners() {
             sendMessage();
         }
     });
-
-    // Theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
 
     // Escape key to close modal
     document.addEventListener('keydown', (e) => {
