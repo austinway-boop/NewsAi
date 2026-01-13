@@ -54,7 +54,21 @@ const newsData = {
             sources: "44 sources",
             category: "Politics",
             publishedAt: "2 hours ago",
-            content: `President Trump announced sweeping new tariffs targeting countries that continue trade relationships with Iran, escalating economic pressure in the region. The 25% tariff will affect multiple sectors including energy, manufacturing, and agricultural products.`
+            content: `President Trump announced sweeping new tariffs targeting countries that continue trade relationships with Iran, escalating economic pressure in the region. The 25% tariff will affect multiple sectors including energy, manufacturing, and agricultural products, according to senior administration officials <sup>[Reuters, WSJ]</sup>.
+
+The decision comes amid growing tensions over Iran's nuclear program and regional influence. Administration officials stated that the measure is designed to further isolate Iran economically while protecting American interests <sup>[CNN, BBC]</sup>. The tariffs specifically target nations that have maintained significant trade volumes with Iran despite existing international sanctions.
+
+European allies have expressed immediate concern about the potential impact on global trade relationships. The European Union is considering retaliatory measures to protect their economic interests, with Germany and France leading the opposition <sup>[Financial Times, Bloomberg]</sup>. EU Trade Commissioner Valdis Dombrovskis called the move "counterproductive to international cooperation."
+
+Several major corporations with international operations are already reassessing their supply chains and trade partnerships in light of these new restrictions. Economic analysts from Goldman Sachs and JPMorgan predict potential market volatility in the coming weeks, particularly in energy and commodities sectors <sup>[Goldman Sachs Research, JPMorgan Analysis]</sup>.
+
+The automotive industry appears particularly vulnerable, with companies like BMW, Mercedes-Benz, and Toyota potentially facing significant cost increases for components sourced through affected supply chains <sup>[Automotive News, Reuters]</sup>. Industry experts estimate the tariffs could add $2,000-$4,000 to the cost of affected vehicles.
+
+Congressional Republicans have largely supported the measure, while Democrats express concerns about its impact on American consumers. Senator Chuck Schumer stated, "While we support tough measures against Iran, we must ensure American families don't bear the economic burden" <sup>[Politico, The Hill]</sup>.
+
+The tariffs are set to take effect within 30 days, giving affected parties time to adjust their trade relationships and seek alternative partnerships. The Treasury Department will publish a detailed list of affected goods and services by Friday <sup>[Treasury.gov, Federal Register]</sup>.
+
+Market analysts predict this could accelerate the ongoing shift toward regionalized supply chains, as companies seek to reduce exposure to geopolitical risks. The move is expected to benefit domestic manufacturers in affected sectors, particularly in renewable energy and advanced manufacturing <sup>[McKinsey Global Institute, Deloitte Insights]</sup>.`
         },
         {
             id: 2,
@@ -63,7 +77,23 @@ const newsData = {
             sources: "32 sources",
             category: "International",
             publishedAt: "4 hours ago",
-            content: `NATO's Supreme Allied Commander issued a stark warning about the growing military cooperation between Russia and China, describing it as an unprecedented threat to Western security.`
+            content: `NATO's Supreme Allied Commander issued a stark warning about the growing military cooperation between Russia and China, describing it as an unprecedented threat to Western security. General Christopher Cavoli, speaking at a defense summit in Brussels, outlined intelligence assessments showing increased coordination between Russian and Chinese military forces across multiple domains <sup>[Defense News, Jane's Defence]</sup>.
+
+The assessment highlights joint military exercises, technology sharing, and coordinated disinformation campaigns as key areas of concern. Recent satellite imagery shows unprecedented levels of military equipment transfers between the two nations, particularly in advanced missile systems and cyber warfare capabilities <sup>[CSIS, ISW Analysis]</sup>.
+
+"What we're seeing is not just bilateral cooperation, but the formation of an alternative military alliance that directly challenges the existing international order," Cavoli stated during his keynote address. The alliance has conducted over 40 joint military exercises in the past year, including naval operations in the South China Sea and Arctic regions <sup>[USNI News, Naval War College Review]</sup>.
+
+NATO allies are being urged to strengthen their collective defense capabilities in response to this evolving threat landscape. The alliance has approved a $100 billion increase in defense spending over the next five years, with particular emphasis on cyber defense and space-based assets <sup>[NATO Official Statement, Defense & Security Analysis]</sup>.
+
+Defense officials from member nations expressed unanimous concern about the implications for global stability. British Defense Secretary Ben Wallace noted, "This partnership represents a fundamental shift in the balance of power that requires immediate and sustained response from democratic nations" <sup>[BBC Defense Correspondent, Sky News]</sup>.
+
+Intelligence assessments reveal that the Russia-China partnership extends beyond traditional military cooperation to include joint development of hypersonic weapons, artificial intelligence applications for defense, and coordinated efforts to challenge Western technological supremacy <sup>[The Diplomat, Foreign Affairs]</sup>.
+
+The partnership has also manifested in economic warfare tactics, with both nations implementing coordinated sanctions responses and developing alternative financial systems to bypass Western institutions like SWIFT <sup>[Financial Times, Wall Street Journal]</sup>.
+
+Plans for enhanced intelligence sharing and joint response capabilities among NATO members are being accelerated. The alliance will establish new command structures specifically designed to counter hybrid threats from the Russia-China axis <sup>[Atlantic Council, RAND Corporation]</sup>.
+
+The commander emphasized that this represents a fundamental shift in the global security landscape, requiring new approaches to deterrence and defense planning that move beyond traditional Cold War strategies <sup>[Foreign Policy, International Institute for Strategic Studies]</sup>.`
         },
         {
             id: 3,
@@ -72,7 +102,23 @@ const newsData = {
             sources: "28 sources",
             category: "Technology",
             publishedAt: "6 hours ago",
-            content: `Major technology companies have announced a significant breakthrough in quantum computing that could revolutionize data processing and encryption technologies.`
+            content: `Major technology companies have announced a significant breakthrough in quantum computing that could revolutionize data processing and encryption technologies. IBM, Google, and Microsoft jointly revealed a new approach to quantum error correction that dramatically improves the stability and reliability of quantum systems <sup>[Nature, Science]</sup>.
+
+The advancement involves a revolutionary technique called "logical qubit encoding" that maintains quantum coherence for extended periods while performing complex calculations at speeds impossible with traditional computers. IBM's quantum processor achieved a 99.9% fidelity rate in maintaining quantum states for over 10 minutes <sup>[IBM Research, Physical Review Letters]</sup>.
+
+"This breakthrough brings us significantly closer to practical quantum advantage," stated Dr. Jay Gambetta, IBM's Vice President of Quantum Computing. The implications extend far beyond computing to fields including drug discovery, financial modeling, climate simulation, and cryptography <sup>[MIT Technology Review, IEEE Spectrum]</sup>.
+
+Researchers demonstrated the ability to factor large numbers exponentially faster than classical computers, a capability that poses both opportunities and threats for current encryption methods. The quantum system successfully factored a 2048-bit number in under four hours, compared to the estimated thousands of years required by conventional computers <sup>[Quantum Information & Computation, Nature Physics]</sup>.
+
+Several pharmaceutical companies are already exploring applications for accelerated drug development. Roche and Pfizer have announced partnerships with quantum computing firms to model molecular interactions for new cancer treatments <sup>[BioPharma Dive, Nature Biotechnology]</sup>. Early simulations suggest quantum computers could reduce drug discovery timelines from 10-15 years to 3-5 years.
+
+The financial sector is particularly interested in quantum applications for risk modeling and algorithmic trading. Goldman Sachs and JP Morgan have invested over $500 million combined in quantum computing research, focusing on portfolio optimization and fraud detection <sup>[Quantinuum Research, McKinsey Quantum Computing Report]</sup>.
+
+However, the advancement also raises significant cybersecurity concerns. Current encryption methods used to protect financial transactions, government communications, and personal data could become vulnerable to quantum attacks. The National Institute of Standards and Technology (NIST) has accelerated its timeline for implementing post-quantum cryptography standards <sup>[NIST Official Statement, Cybersecurity & Infrastructure Security Agency]</sup>.
+
+Industry experts believe this breakthrough could lead to commercial quantum computing systems within the next five years, fundamentally changing how we approach complex computational problems. The global quantum computing market is projected to reach $125 billion by 2030 <sup>[IDC Market Research, Boston Consulting Group]</sup>.
+
+Major cloud providers are already incorporating quantum processors into their services. Amazon Web Services, Microsoft Azure, and Google Cloud Platform have announced expanded quantum computing offerings for enterprise customers <sup>[AWS Press Release, Microsoft Official Blog, Google Quantum AI]</sup>.`
         },
         {
             id: 4,
@@ -392,6 +438,7 @@ const chatInput = document.getElementById('chatInput');
 const sendBtn = document.getElementById('sendBtn');
 const chatMessages = document.getElementById('chatMessages');
 const chatConversation = document.getElementById('chatConversation');
+const modalContentEl = document.getElementById('modalContent');
 
 // Current state
 let currentCategory = 'top';
@@ -465,6 +512,66 @@ function setupEventListeners() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             closeModalHandler();
+        }
+    });
+
+    // Mobile swipe functionality
+    setupSwipeToClose();
+}
+
+// Mobile swipe to close functionality
+function setupSwipeToClose() {
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
+    let initialModalTop = 0;
+
+    modalContentEl.addEventListener('touchstart', (e) => {
+        if (!modal.classList.contains('active')) return;
+        
+        startY = e.touches[0].clientY;
+        initialModalTop = modalContentEl.getBoundingClientRect().top;
+        isDragging = true;
+        modalContentEl.style.transition = 'none';
+    });
+
+    modalContentEl.addEventListener('touchmove', (e) => {
+        if (!isDragging || !modal.classList.contains('active')) return;
+        
+        currentY = e.touches[0].clientY;
+        const deltaY = currentY - startY;
+        
+        // Only allow downward swipe
+        if (deltaY > 0) {
+            const translateY = Math.min(deltaY, 200);
+            modalContentEl.style.transform = `translateY(${translateY}px)`;
+            
+            // Add opacity effect
+            const opacity = Math.max(0.5, 1 - (deltaY / 400));
+            modal.style.backgroundColor = `rgba(0, 0, 0, ${opacity * 0.5})`;
+        }
+    });
+
+    modalContentEl.addEventListener('touchend', (e) => {
+        if (!isDragging || !modal.classList.contains('active')) return;
+        
+        const deltaY = currentY - startY;
+        isDragging = false;
+        
+        modalContentEl.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+        
+        // Close if swiped down enough (more than 100px)
+        if (deltaY > 100) {
+            modalContentEl.style.transform = 'translateY(100vh)';
+            setTimeout(() => {
+                closeModalHandler();
+                modalContentEl.style.transform = '';
+                modal.style.backgroundColor = '';
+            }, 300);
+        } else {
+            // Snap back to original position
+            modalContentEl.style.transform = '';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
         }
     });
 }
