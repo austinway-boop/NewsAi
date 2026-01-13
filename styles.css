@@ -259,14 +259,14 @@ body {
 }
 
 .modal-body {
-    display: grid;
-    grid-template-columns: 1fr 400px;
     height: calc(90vh - 80px);
+    overflow-y: auto;
 }
 
 .article-section {
     padding: 24px;
-    overflow-y: auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .article-image {
@@ -303,32 +303,42 @@ body {
     margin-bottom: 16px;
 }
 
-/* Chat Section */
-.chat-section {
-    background-color: var(--secondary-bg);
-    border-left: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+/* Conversation Section */
+.chat-conversation {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
 }
 
-.chat-header {
-    padding: 20px;
-    border-bottom: 1px solid var(--border-color);
+.conversation-divider {
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.chat-header h3 {
-    font-size: 18px;
-    font-weight: 600;
+.conversation-divider span {
+    background: var(--primary-bg);
+    padding: 0 16px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.conversation-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color);
+    z-index: -1;
 }
 
 .chat-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 24px;
 }
 
 .ai-message,
@@ -363,10 +373,10 @@ body {
 }
 
 .message-content {
-    background: var(--primary-bg);
+    background: var(--secondary-bg);
     padding: 12px 16px;
-    border-radius: 12px;
-    max-width: 280px;
+    border-radius: 16px;
+    max-width: 70%;
     font-size: 14px;
     line-height: 1.4;
     box-shadow: var(--shadow);
@@ -377,39 +387,71 @@ body {
     color: white;
 }
 
-.chat-input-container {
-    padding: 20px;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    gap: 12px;
-}
-
-.chat-input {
-    flex: 1;
-    padding: 12px 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 14px;
+/* Circular Search Input */
+.search-input-container {
+    position: sticky;
+    bottom: 0;
     background: var(--primary-bg);
+    padding: 20px 0;
+    margin-top: 32px;
+    border-top: 1px solid var(--border-color);
 }
 
-.chat-input:focus {
+.search-input-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 60px 16px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 16px;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
     outline: none;
     border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.send-btn {
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
     background: var(--accent-color);
     color: white;
     border: none;
-    padding: 12px 16px;
-    border-radius: 8px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-.send-btn:hover {
+.search-btn:hover {
     background: #1d4ed8;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.search-btn:disabled {
+    background: var(--text-secondary);
+    cursor: not-allowed;
+    transform: translateY(-50%);
 }
 
 /* Mobile Menu */
@@ -491,11 +533,6 @@ body {
         gap: 16px;
     }
     
-    .modal-body {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 400px;
-    }
-    
     .article-section {
         padding: 16px;
     }
@@ -508,9 +545,15 @@ body {
         height: 200px;
     }
     
-    .chat-section {
-        border-left: none;
-        border-top: 1px solid var(--border-color);
+    .search-input {
+        font-size: 16px;
+        padding: 14px 55px 14px 18px;
+    }
+    
+    .search-btn {
+        width: 36px;
+        height: 36px;
+        right: 6px;
     }
     
     .main-content {
@@ -552,12 +595,11 @@ body {
         font-size: 20px;
     }
     
-    .chat-messages {
-        padding: 12px;
-    }
-    
-    .chat-input-container {
-        padding: 12px;
+    .search-input-container {
+        padding: 16px 0;
+        margin: 24px -16px 0;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 

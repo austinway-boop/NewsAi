@@ -391,6 +391,7 @@ const closeMobileMenu = document.getElementById('closeMobileMenu');
 const chatInput = document.getElementById('chatInput');
 const sendBtn = document.getElementById('sendBtn');
 const chatMessages = document.getElementById('chatMessages');
+const chatConversation = document.getElementById('chatConversation');
 
 // Current state
 let currentCategory = 'top';
@@ -553,17 +554,10 @@ function closeMobileMenuHandler() {
 
 // Reset chat
 function resetChat() {
-    chatMessages.innerHTML = `
-        <div class="ai-message">
-            <div class="message-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="message-content">
-                <p>Hi! I'm here to help you understand this article better. What would you like to know?</p>
-            </div>
-        </div>
-    `;
+    chatMessages.innerHTML = '';
+    chatConversation.style.display = 'none';
     chatInput.value = '';
+    chatInput.placeholder = 'Ask a follow-up question...';
 }
 
 // Send message
@@ -571,15 +565,30 @@ function sendMessage() {
     const message = chatInput.value.trim();
     if (!message || !currentArticle) return;
 
+    // Show conversation area if this is the first message
+    if (chatConversation.style.display === 'none') {
+        chatConversation.style.display = 'block';
+        chatInput.placeholder = 'Continue the conversation...';
+    }
+
     // Add user message
     addMessage(message, 'user');
     chatInput.value = '';
+
+    // Disable input while processing
+    chatInput.disabled = true;
+    sendBtn.disabled = true;
 
     // Simulate AI response
     setTimeout(() => {
         const response = generateAIResponse(message, currentArticle);
         addMessage(response, 'ai');
-    }, 1000);
+        
+        // Re-enable input
+        chatInput.disabled = false;
+        sendBtn.disabled = false;
+        chatInput.focus();
+    }, 1200);
 }
 
 // Add message to chat
@@ -604,24 +613,27 @@ function addMessage(content, type) {
 
 // Generate AI response (simplified simulation)
 function generateAIResponse(question, article) {
-    const responses = [
-        `Based on the article about "${article.title}", this appears to be related to ${article.category.toLowerCase()} developments. What specific aspect would you like me to explain further?`,
-        `This article discusses important developments in ${article.category.toLowerCase()}. The key points suggest significant implications for policy and public interest.`,
-        `The article was published ${article.publishedAt} and has been covered by ${article.sources}. This indicates substantial media attention and public interest.`,
-        `From my analysis of the article, this development could have broader implications beyond what's immediately apparent. Would you like me to explore potential consequences?`,
-        `The article provides substantial detail about recent events. I can help break down the complex aspects or explain the background context if that would be helpful.`
-    ];
-
-    // Simple keyword-based response selection
     const lowerQuestion = question.toLowerCase();
-    if (lowerQuestion.includes('explain') || lowerQuestion.includes('what')) {
-        return responses[0];
-    } else if (lowerQuestion.includes('when') || lowerQuestion.includes('time')) {
-        return responses[2];
-    } else if (lowerQuestion.includes('why') || lowerQuestion.includes('impact')) {
-        return responses[3];
+    
+    // Context-aware responses that reference the article as previous context
+    if (lowerQuestion.includes('explain') || lowerQuestion.includes('what') || lowerQuestion.includes('how')) {
+        return `To expand on what I mentioned about ${article.title.toLowerCase()}, this development is particularly significant because it represents a shift in ${article.category.toLowerCase()} policy. The key factors driving this include economic pressures, international relations, and public sentiment. Would you like me to dive deeper into any of these aspects?`;
+    } else if (lowerQuestion.includes('why') || lowerQuestion.includes('reason')) {
+        return `The underlying reasons for this ${article.category.toLowerCase()} development stem from several factors I touched on earlier. Political motivations, economic incentives, and timing all play crucial roles. This wasn't a spontaneous decision but rather the result of ongoing negotiations and pressures that have been building over time.`;
+    } else if (lowerQuestion.includes('when') || lowerQuestion.includes('timeline') || lowerQuestion.includes('time')) {
+        return `As I mentioned, this was reported ${article.publishedAt} and covered by ${article.sources}. However, the timeline for implementation is key here - these changes typically take 30-90 days to fully take effect, allowing stakeholders to adjust their strategies accordingly.`;
+    } else if (lowerQuestion.includes('impact') || lowerQuestion.includes('effect') || lowerQuestion.includes('consequence')) {
+        return `Building on the details I shared earlier, the broader implications of this ${article.category.toLowerCase()} development could be quite substantial. We're likely to see ripple effects across related industries, changes in market dynamics, and potential policy responses from other stakeholders. The full impact may not be apparent for several months.`;
+    } else if (lowerQuestion.includes('source') || lowerQuestion.includes('reliable') || lowerQuestion.includes('verify')) {
+        return `This information comes from ${article.sources}, indicating significant media coverage and verification across multiple outlets. The widespread reporting suggests the credibility of these developments, though as always, it's worth monitoring how the situation evolves over time.`;
     } else {
-        return responses[Math.floor(Math.random() * responses.length)];
+        // Generic contextual responses
+        const genericResponses = [
+            `That's an interesting follow-up to the information I shared about ${article.title.toLowerCase()}. This aspect of the story highlights the complexity of ${article.category.toLowerCase()} issues and how they interconnect with broader societal trends.`,
+            `Good question about the details I mentioned. The nuances of this ${article.category.toLowerCase()} situation reveal how multiple stakeholders with different interests are navigating these developments.`,
+            `To build on what I explained earlier, this particular angle shows how ${article.category.toLowerCase()} decisions often have unintended consequences that become apparent only after implementation begins.`
+        ];
+        return genericResponses[Math.floor(Math.random() * genericResponses.length)];
     }
 }
 
